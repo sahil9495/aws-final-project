@@ -62,7 +62,7 @@ phases:
       - FRONTEND_IMAGE_TAG=frontend-build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   install:
     runtime-versions:
-      nodejs: 16
+      nodejs: 18
     commands:
       - cd server
       - npm install
