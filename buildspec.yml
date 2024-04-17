@@ -78,7 +78,7 @@ phases:
     commands:
       - echo Building server Docker image
       - cd server
-      - docker build -t $REPOSITORY_URI:latest-server -t $REPOSITORY_URI:$SERVER_IMAGE_TAG -f server/Dockerfile server
+      - docker build -t $REPOSITORY_URI:latest-server -t $REPOSITORY_URI:$SERVER_IMAGE_TAG -f server/dockerfile ./server
       - cd ..
       - cd client
       - echo Building frontend Docker image
