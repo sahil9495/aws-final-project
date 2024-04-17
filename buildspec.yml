@@ -66,12 +66,10 @@ phases:
     commands:
       - npm install
 
-  build_server:
+  build:
     commands:
       - echo Building server Docker image
       - docker build -t $REPOSITORY_URI:latest-server -t $REPOSITORY_URI:$SERVER_IMAGE_TAG -f server/Dockerfile .
-  build_frontend:
-    commands:
       - echo Building frontend Docker image
       - docker build -t $REPOSITORY_URI:latest-frontend -t $REPOSITORY_URI:$FRONTEND_IMAGE_TAG -f frontend/Dockerfile .
   post_build:
