@@ -64,7 +64,15 @@ phases:
     runtime-versions:
       nodejs: 16
     commands:
+      - cd server
       - npm install
+      # Return to root directory
+      - cd ..
+      # Install dependencies for frontend
+      - cd client
+      - npm install
+      # Return to root directory
+      - cd ..
 
   build:
     commands:
