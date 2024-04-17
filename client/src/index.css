@@ -1,0 +1,143 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+ font-family: Urbanist, system-ui, Avenir, Arial, Helvetica, sans-serif;
+  color-scheme: light dark;
+}
+:root{
+
+  --bg-color: #f4f3ff;
+  --btn-color: #646cff;
+  --dark-color: red;
+  --helper-color: #f75838;
+}
+html{
+  
+  font-size: 62.5%;
+}
+
+body{
+   margin: 0;
+   min-width: 32rem;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+/* registration form  */
+/* DonorForm.css */
+
+.text-center  {
+  margin: 0%;
+  text-align: center;
+  color: #333;
+}
+
+.container-s {
+  max-width: max-content;
+  margin:  auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+ 
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+ display: block;
+  width: 150px;
+  margin-right: 20px;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #111;
+  word-spacing: 0%;
+}
+
+.input-field {
+  width: 50rem; /* Adjust the width of the input field */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.submit-btn {
+  width: 10rem;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 20rem;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+
+/* looking for blood */
+
+.form label{
+  display: inline;
+  margin-right: 1rem;
+}
+
+.form .input-field {
+  width: 50rem; /* Adjust the width of the input field */
+  padding: 10px;
+  margin: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.submit{
+  text-align: center;
+}
+.form .submit-btn{
+  text-align: center;
+  margin-left: 4rem;
+  background: linear-gradient(180deg, #c31432,#240b36 100%);
+}
+#results{
+  max-width: 140rem;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  
+}
+table{
+  text-align: center;
+  justify-items: center;
+  margin: auto;
+  width: 100%;
+  font-size: 2em !important;
+  border: 1px solid black;
+}
+th{
+  text-align: center;
+  margin: 2rem;
+  padding: 2rem;
+  font-size: 2rem;
+  border: 1px solid black;
+}
+
+ td{
+  padding: 2rem;
+  border: 1px solid black;
+  font-size: 2rem;
+}

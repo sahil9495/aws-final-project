@@ -1,0 +1,27 @@
+.container{
+    min-width: 140rem;
+    padding: 2.2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.brand{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+ul{
+    display: flex;
+    gap: 3.5rem;
+}
+li{
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.img-fluid{
+    width: 8rem;
+    height: 8rem;
+}

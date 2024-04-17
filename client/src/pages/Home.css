@@ -1,0 +1,155 @@
+.container{
+    min-width: 140rem;
+    padding: 2.2rem 2.5rem;
+    text-align: justify;
+    
+}
+h1{
+    font-size: 3.5rem;
+    font-weight: 500;
+    background: linear-gradient(180deg, #c31432,#240b36 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 6rem;
+}
+
+.grid{
+    display: grid;
+    margin: 1rem;
+}
+.grid-two-cols{
+   
+    grid-template-columns: repeat(2,1fr);
+    margin: 2rem;
+}
+
+p{
+    font-size: 2rem;
+    margin: 3rem;
+    margin-left: 0;
+    font-weight: 500;
+}
+
+.img-fluids{
+    width: 70rem;
+    height: 50rem;
+    padding: 3rem;
+    padding-top: 0;
+}
+.btn{
+width: auto;
+padding: 10px;
+border: 1px solid black;
+margin-right: 1rem;
+border-radius: 4px;
+color: #111;
+font-size: 18px;
+cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.2);
+}
+.btn1{
+    margin-left: 1rem;
+    background: linear-gradient(180deg, #c31432,#240b36 100%);
+    color: white;
+}
+/* process css */
+
+#process
+{
+    min-width: 140rem;
+    padding: 2.2rem 2.5rem;
+    text-align: center;
+
+}
+#process h2{
+    color: var(--dark-color);
+    display: inline;
+    text-align: center;
+    font-weight: 700;
+    font-size: 3.5rem;
+    position: relative;
+      
+     
+    
+}
+#process h2::after{
+    content: '';
+    position: absolute;
+    left: 30%;
+    bottom: -10px; /* Adjust the distance from the text */
+    width: 50%;
+    height: 4px; /* Set the thickness of the underline */
+    background-color:var(--helper-color);/* Set the color of the underline */
+    border-radius: 80px; 
+
+}
+
+
+.process-theroy h3{
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: justify;
+}
+.process-theroy p{
+
+    text-align: justify;
+}
+
+.process-image img{
+    margin: 5rem;
+    margin-top: 20rem;
+  width: 55rem;
+}
+
+
+/* requirments-process */
+
+#requirments{
+    min-width: 140rem;
+    padding: 2.2rem 2.5rem;
+    text-align: center;
+    
+}
+#requirments h2{
+    color: var(--dark-color);
+    display: inline;
+    text-align: center;
+    font-weight: 700;
+    font-size: 3.5rem;
+    position: relative;
+}
+#requirments h2::after{
+    content: '';
+    position: absolute;
+    left: 30%;
+    bottom: -10px; /* Adjust the distance from the text */
+    width: 50%;
+    height: 4px; /* Set the thickness of the underline */
+    background-color:var(--helper-color);/* Set the color of the underline */
+    border-radius: 80px; 
+
+}
+
+.container .box{
+    margin: 1rem;
+
+}
+.container .box ul{
+   display: block;
+}
+
+.container .box li{
+    list-style-type: disc;
+    font-size: 1.8rem;
+}
+
+.requirments-advisory img{
+    margin-top: 5rem;
+    width: 60rem;
+}
+
+

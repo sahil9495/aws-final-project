@@ -1,0 +1,91 @@
+# version: 0.2
+
+# phases:
+#   pre_build:
+#     commands:
+#       - echo Logging in to AWS ECR
+#       - aws --version
+#       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 471112518313.dkr.ecr.us-east-1.amazonaws.com
+#       - REPOSITORY_URI=471112518313.dkr.ecr.us-east-1.amazonaws.com/mern-project
+#       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+#   install:
+#     runtime-versions:
+#       nodejs: 16
+   
+#     commands:
+#       # install npm
+#       - cd client
+#       - npm install
+#       - cd ../server
+#       - npm install
+       
+#   build:
+#     commands:
+#       - echo Build started on 'date'
+#       # run build script
+#       # npm run-script build
+#       - echo Building docker image
+#       - docker build -t $REPOSITORY_URI:latest .
+#       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+#   post_build:
+#     commands:
+#       - echo Build completed on 'date'
+#       - echo pushing to REPOSITORY_URI
+#       - docker push $REPOSITORY_URI:latest
+#       - docker push $REPOSITORY_URI:$IMAGE_TAG
+#       - echo Writing image defination file...
+#       # Give your container a name
+#       - DOCKER_CONTAINER_NAME=ec2-project2-container
+#       - printf '[{"name":"DOCKER_CONTAINER_NAM","imageUri":"IMAGE_TAG"}]' > imagedefinitions.json
+#       - echo printing imagedefinations.json     
+#       - cat imagedefinitions.json
+     
+# artifacts:
+#   # include all files required to run application
+#   # notably excluded is node_modules, as this will cause overwrite error on deploy
+#   files:
+#     - models/*
+#     - package.json
+#     - index.js
+#     - imagedefinitions.json
+
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to AWS ECR
+      - aws --version
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 471112518313.dkr.ecr.us-east-1.amazonaws.com
+      - REPOSITORY_URI=471112518313.dkr.ecr.us-east-1.amazonaws.com/vw-ecr 
+      - SERVER_IMAGE_TAG=server-build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+      - FRONTEND_IMAGE_TAG=frontend-build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - npm install
+
+  build_server:
+    commands:
+      - echo Building server Docker image
+      - docker build -t $REPOSITORY_URI:latest-server -t $REPOSITORY_URI:$SERVER_IMAGE_TAG -f server/Dockerfile .
+  build_frontend:
+    commands:
+      - echo Building frontend Docker image
+      - docker build -t $REPOSITORY_URI:latest-frontend -t $REPOSITORY_URI:$FRONTEND_IMAGE_TAG -f frontend/Dockerfile .
+  post_build:
+    commands:
+      - echo Pushing server Docker image to repository
+      - docker push $REPOSITORY_URI:latest-server
+      - docker push $REPOSITORY_URI:$SERVER_IMAGE_TAG
+      - echo Pushing frontend Docker image to repository
+      - docker push $REPOSITORY_URI:latest-frontend
+      - docker push $REPOSITORY_URI:$FRONTEND_IMAGE_TAG
+      - echo Writing image definition file...
+      - printf '[{"name":"server-container","imageUri":"'$REPOSITORY_URI':'$SERVER_IMAGE_TAG'"},{"name":"frontend-container","imageUri":"'$REPOSITORY_URI':'$FRONTEND_IMAGE_TAG'"}]' > imagedefinitions.json
+      - echo Printing imagedefinitions.json     
+      - cat imagedefinitions.json
+
+artifacts:
+  files: []
