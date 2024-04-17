@@ -57,7 +57,7 @@ phases:
       - echo Logging in to AWS ECR
       - aws --version
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 471112518313.dkr.ecr.us-east-1.amazonaws.com
-      - REPOSITORY_URI=471112518313.dkr.ecr.us-east-1.amazonaws.com/vw-ecr 
+      - REPOSITORY_URI=471112518313.dkr.ecr.us-east-1.amazonaws.com/mern-project 
       - SERVER_IMAGE_TAG=server-build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
       - FRONTEND_IMAGE_TAG=frontend-build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   install:
