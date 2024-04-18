@@ -37,7 +37,7 @@ export const Donar=()=>{
       e.preventDefault();
      
       try {
-        const response = await axios.post('http://final1-626074322.us-east-1.elb.amazonaws.com/api/register', formdata);
+        const response = await axios.post('http://final-loadbalncers-1996249434.us-east-1.elb.amazonaws.com/api/register', formdata);
         alert("Data Submited Susceeasfully")
         console.log('Data sent to backend:', response.data);
         // Reset form data after successful submission

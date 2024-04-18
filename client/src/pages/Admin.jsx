@@ -15,7 +15,7 @@ export const Admin = () => {
   
     const fetchDonors = async () => {
       try {
-        const response = await axios.get('http://final1-626074322.us-east-1.elb.amazonaws.com/api/register/donors');
+        const response = await axios.get('http://final-loadbalncers-1996249434.us-east-1.elb.amazonaws.com/api/register/donors');
         setDonors(response.data);
       } catch (error) {
         console.error('Error fetching donors:', error);
@@ -24,7 +24,7 @@ export const Admin = () => {
   
     const handleDelete = async (id) => {
       try {
-        await axios.delete(`http://localhost:3000/api/register/donors/${id}`);
+        await axios.delete(`http://final-loadbalncers-1996249434.us-east-1.elb.amazonaws.com/api/register/donors/${id}`);
         // Remove the deleted donor from the donors list
         setDonors(donors.filter(donor => donor._id !== id));
       } catch (error) {
