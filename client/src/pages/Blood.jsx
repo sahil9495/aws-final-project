@@ -31,7 +31,7 @@ const handleChange = async (e) =>{
     e.preventDefault();
    
     try {
-      const response = await axios.post('http://localhost:3000/api/register/search', query);
+      const response = await axios.post('http://final1-626074322.us-east-1.elb.amazonaws.com/api/register/search', query);
       console.log(response.data)    
        setSearchResults(response.data);
        alert("Donar Found")

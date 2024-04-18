@@ -15,7 +15,7 @@ export const Admin = () => {
   
     const fetchDonors = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/register/donors');
+        const response = await axios.get('http://final1-626074322.us-east-1.elb.amazonaws.com/api/register/donors');
         setDonors(response.data);
       } catch (error) {
         console.error('Error fetching donors:', error);
