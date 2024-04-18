@@ -1,17 +1,14 @@
-const mongoose =require("mongoose");
+const mongoose = require("mongoose");
 
-const connection = async () =>{
-    try{
-        
-const mongoURL = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_IP}:${process.env.MONGO_PORT}/?authSource=admin`;
+const connection = async () => {
+    const uri = "mongodb+srv://sahiltamboli9494:sahil9595@cluster1.v9tthlw.mongodb.net/blood";
+    
+    try {
+        await mongoose.connect(uri);
+        console.log("Connected to MongoDB Atlas");
+    } catch (error) {
+        console.error("Error connecting to MongoDB Atlas:", error);
+    }
+};
 
-        await mongoose.connect(mongoURL, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-          });
-     }catch(error)
-     {
-             console.log(error);
-     }
-}
 module.exports = connection;
