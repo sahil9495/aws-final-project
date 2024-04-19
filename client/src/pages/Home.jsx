@@ -77,7 +77,7 @@ export const Home = () => {
 
         <section id ="requirments">
 
-            <h2>Before You Donate</h2>
+            <h2>Before Donate</h2>
 
             <div className="container">
 
